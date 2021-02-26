@@ -9,10 +9,10 @@ import Product from "../Product/Product";
 const Shop = () => {
     // for show 10 data in first page
   const first10 = fakeData.slice(0, 10);
-  const [products, setPd] = useState(first10);
+  const [products, setProducts] = useState(first10);
 
-    const handleAddProduct=()=>{
-        // console.log("hoina kan");
+    const handleAddProduct=(product)=>{
+        console.log("hoina kan",product);
     }
   
   
