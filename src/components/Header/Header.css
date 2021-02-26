@@ -1,0 +1,30 @@
+.header{
+    text-align: center;
+    margin-top: 10px;
+}
+.header img{
+    height: 75px;
+}
+nav{
+    background-color: black;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: start;
+ 
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin-left: 25px;
+}
+
+nav a:hover{
+    background-color: tomato;
+}
+.input{
+    width: 600px;
+    height: 20px;
+    margin-left: 85px;
+    margin-bottom: 20px;
+}
