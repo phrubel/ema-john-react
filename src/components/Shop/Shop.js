@@ -10,8 +10,8 @@ import Order from "../Order/Order";
 
 const Shop = () => {
     // for show 10 data in first page
-  const first10 = fakeData.slice(0, 10);
-  const [products, setProducts] = useState(first10);
+  const firstTen = fakeData.slice(0, 10);
+  const [products, setProducts] = useState(firstTen);
   const [cart,setCart]=useState([]);
 
 
@@ -26,7 +26,7 @@ const Shop = () => {
     <div className="shop-container">
       <div className="products-container">
           {
-          products.map(product => <Product product={product} 
+          products.map(product => <Product product={product} key={product.key}
             handleAddProduct={handleAddProduct}
             ></Product>)
           }
