@@ -25,6 +25,7 @@ const Product = (props) => {
         <h4>${price}</h4>
         <br />
         <p>Only {stock} left in stock-order soon</p>
+        <p>Soe Prblem</p>
         <br />
         <button className="cart-btn"
             onClick={props.handleAddProduct(props.Product)}
