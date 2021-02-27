@@ -12,7 +12,7 @@ const Shop = () => {
   const [products, setProducts] = useState(first10);
 
     const handleAddProduct=(product)=>{
-        console.log("hoina kan",product);
+        // console.log("hoina kan",product);
     }
   
   
