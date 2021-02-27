@@ -13,6 +13,7 @@ const Header = () => {
         <a href="/review">Order Review</a>
         <a href="/inventory">Manage Inventory</a> <br/>
         <input className="input" type="text" placeholder={"Serach Your Choise"}/>
+        
       </nav>
     </div>
   );

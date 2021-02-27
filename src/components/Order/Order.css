@@ -1,0 +1,10 @@
+.order-btn{
+    background-color:#f0c14b;
+    width: 250px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}
