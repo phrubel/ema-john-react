@@ -5,6 +5,7 @@ import "./Order.css";
 // for Icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 const Order = (props) => {
   const cart = props.cart;
@@ -53,8 +54,10 @@ const grandTotal=(total + shipping+Number(tax)).toFixed(2);
       <p>Shipping Cost: {shipping}</p>
       <p>Tax + Vat: {tax}</p>
       <p>Total Price: {grandTotal}</p>
-      <button className="order-btn">
+      <Link to="/review">
+        <button className="order-btn">
           <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>
+      </Link>
     </div>
   );
 };
