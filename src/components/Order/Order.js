@@ -2,23 +2,20 @@ import React from "react";
 // for Css
 import "./Order.css";
 
-// for Icon
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom";
+
 
 const Order = (props) => {
   const cart = props.cart;
   console.log(cart);
   // reduce system
-  // const totalPrice=cart.reduce((total,product)=>total+product.price,0);
+  // const totalPrice=cart.reduce((total,product)=>total+product.price*product.quantity,0);
 
   // Reduce sara for loop diye same kaj
  //  Total Price
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
     const product = cart[i];
-    total = total + product.price;
+    total = total + product.price*product.quantity;
   }
 
   //  Shipping Cost
@@ -54,10 +51,9 @@ const grandTotal=(total + shipping+Number(tax)).toFixed(2);
       <p>Shipping Cost: {shipping}</p>
       <p>Tax + Vat: {tax}</p>
       <p>Total Price: {grandTotal}</p>
-      <Link to="/review">
-        <button className="order-btn">
-          <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>
-      </Link>
+      {
+        props.children
+      }
     </div>
   );
 };
