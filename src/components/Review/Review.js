@@ -8,15 +8,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboardCheck} from '@fortawesome/free-solid-svg-icons'
 // import image
 import thankYouImage from "../../images/giphy.gif";
+import { useHistory } from 'react-router';
 
 const Review = () => {
 const [cart,setCart]=useState([])
 const [orderPlaced,setOrderPlaced]=useState(false)
+const history= useHistory()
 
- const handlePlaceOrder= () =>{
-     setCart([]);
-     setOrderPlaced(true)
-     processOrder()
+ const handleCheckOut= () =>{
+     history.push('/shipment')
+    //  setCart([]);
+    //  setOrderPlaced(true)
+    //  processOrder()
  }
 
     const removeProduct= (productKey)=>{
@@ -56,8 +59,8 @@ const [orderPlaced,setOrderPlaced]=useState(false)
              </div>
              <div className="cart-container">
                  <Order cart={cart}>
-                     <button className="order-btn" onClick={handlePlaceOrder} >
-                         <FontAwesomeIcon icon={faClipboardCheck} /> Place Order</button>
+                     <button className="order-btn" onClick={handleCheckOut} >
+                         <FontAwesomeIcon icon={faClipboardCheck} /> Check Out</button>
                       </Order>
              </div>
         </div>
