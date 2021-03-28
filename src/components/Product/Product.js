@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 
 const Product = (props) => {
-    // console.log(props);
   // destructuring. props bar bar na likhar jnno
   const { img, name, seller, price, stock,key } = props.product;
   return (

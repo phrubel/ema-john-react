@@ -1,12 +1,14 @@
 import React from 'react';
-// import fakeData from '../../fakeData'
+
+
+
 
 const Inventory = () => {
 const product={};
 
     // post all data
     const handleAddProducts = () =>{
-        fetch('http://localhost:5000/addProducts',{
+        fetch('https://lit-harbor-25416.herokuapp.com/addProducts',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

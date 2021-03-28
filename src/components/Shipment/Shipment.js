@@ -12,7 +12,7 @@ const Shipment = () => {
     const savedCart = getDatabaseCart()
       const orderDetails = {...loggedInUser,products:savedCart,shipment:data,orderTime: new Date ()};
 
-    fetch('http://localhost:5000/addOrder',{
+    fetch('https://lit-harbor-25416.herokuapp.com/addOrder',{
       method:'POST',
       headers:{
         'Content-Type' : 'application/json'
@@ -29,7 +29,7 @@ const Shipment = () => {
 
     };
 
-  console.log(watch("example")); // watch input value by passing the name of it
+  
 
   return (
     <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>

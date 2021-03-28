@@ -6,7 +6,6 @@ import "./Order.css";
 
 const Order = (props) => {
   const cart = props.cart;
-  console.log(cart);
   // reduce system
   // const totalPrice=cart.reduce((total,product)=>total+product.price*product.quantity,0);
 

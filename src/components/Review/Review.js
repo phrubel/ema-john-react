@@ -33,7 +33,7 @@ const Review = () => {
         // set Local Storage
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
-        fetch('http://localhost:5000/productsByKeys', {
+        fetch('https://lit-harbor-25416.herokuapp.com/productsByKeys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
