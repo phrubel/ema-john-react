@@ -9,14 +9,14 @@ import { Link } from "react-router-dom";
 
 const Product = (props) => {
   // destructuring. props bar bar na likhar jnno
-  const { img, name, seller, price, stock,key } = props.product;
+  const { img, name, seller, price, stock, key } = props.product;
   return (
     <div className="product">
       <div>
         <img src={img} alt="" />
       </div>
       <div>
-        <h3 className="product-title"><Link to={"/product/"+key}>{name}</Link></h3>
+        <h3 className="product-title"><Link to={"/product/" + key}>{name}</Link></h3>
         <br />
         <p>
           <small>by:{seller}</small>
@@ -27,10 +27,10 @@ const Product = (props) => {
         <p>Only {stock} left in stock-order soon</p>
         <br />
         {/* Button Show true */}
-      {props.showAddToCart && <button className="cart-btn"
-          onClick={()=>props.handleAddProduct(props.product)}
-      >
-        <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>}
+        {props.showAddToCart && <button className="cart-btn"
+          onClick={() => props.handleAddProduct(props.product)}
+        >
+          <FontAwesomeIcon icon={faShoppingCart} /> add to cart</button>}
       </div>
     </div>
   );

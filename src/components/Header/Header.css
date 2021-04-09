@@ -22,9 +22,3 @@ nav a{
 nav a:hover{
     background-color: tomato;
 }
-.input{
-    width: 600px;
-    height: 20px;
-    margin-left: 85px;
-    margin-bottom: 20px;
-}

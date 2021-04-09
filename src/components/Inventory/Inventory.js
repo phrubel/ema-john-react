@@ -4,13 +4,13 @@ import React from 'react';
 
 
 const Inventory = () => {
-const product={};
+    const product = {};
 
     // post all data
-    const handleAddProducts = () =>{
-        fetch('https://lit-harbor-25416.herokuapp.com/addProducts',{
+    const handleAddProducts = () => {
+        fetch('https://lit-harbor-25416.herokuapp.com/addProducts', {
             method: 'POST',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(product)
@@ -19,15 +19,15 @@ const product={};
     return (
         <div>
             <form action="">
-        <p><span>Name: </span><input type="text"/></p>
-        <p><span>Price: </span><input type="text"/></p>
-        <p><span>Quantity: </span><input type="text"/></p>
-        <p><span>product Image: </span><input type="file"/></p>
+                <p><span>Name: </span><input type="text" /></p>
+                <p><span>Price: </span><input type="text" /></p>
+                <p><span>Quantity: </span><input type="text" /></p>
+                <p><span>product Image: </span><input type="file" /></p>
 
-            <button onClick={handleAddProducts}>Add Products</button>
+                <button onClick={handleAddProducts}>Add Products</button>
             </form>
 
-            
+
         </div>
     );
 };

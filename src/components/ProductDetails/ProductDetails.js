@@ -5,13 +5,13 @@ import Product from '../Product/Product';
 
 const ProductDetails = () => {
     const { productKey } = useParams()
-    const [product,setProduct]=useState({})
+    const [product, setProduct] = useState({})
 
-    useEffect(() =>{
-        fetch('https://lit-harbor-25416.herokuapp.com/product/'+productKey)
-        .then(res => res.json())
-        .then(data => setProduct(data))
-    },[productKey])
+    useEffect(() => {
+        fetch('https://lit-harbor-25416.herokuapp.com/product/' + productKey)
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [productKey])
 
     return (
         <div>

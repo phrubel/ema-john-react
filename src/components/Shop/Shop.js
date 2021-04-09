@@ -16,13 +16,14 @@ import { Link } from "react-router-dom";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [search, setSearch] = useState('');
 
 
   useEffect(() => {
-    fetch('https://lit-harbor-25416.herokuapp.com/products')
+    fetch('https://lit-harbor-25416.herokuapp.com/products?search=' + search)
       .then(res => res.json())
       .then(data => setProducts(data))
-  }, [])
+  }, [search])
 
   useEffect(() => {
     const savedCart = getDatabaseCart()
@@ -37,6 +38,12 @@ const Shop = () => {
       .then(res => res.json())
       .then(data => setCart(data))
   }, [])
+
+  // search handle
+  const handleSearch = event => {
+    setSearch(event.target.value)
+  }
+
 
   const handleAddProduct = (product) => {
     const toBeAddedKey = product.key;
@@ -61,16 +68,21 @@ const Shop = () => {
 
 
   return (
-    <div className="shop-container">
-      <div className="products-container">
-        {
-          products.map(product => <Product
-            // Button show
-            showAddToCart={true}
-            product={product} key={product.key}
-            handleAddProduct={handleAddProduct}
-          ></Product>)
-        }
+    <div className="row">
+      <div className="col-md-9">
+        <div className="shop-container">
+          <div className="products-container">
+            <input className="input" onBlur={handleSearch} type="text" placeholder={"Serach Your Choise"} />
+            {
+              products.map(product => <Product
+                // Button show
+                showAddToCart={true}
+                product={product} key={product.key}
+                handleAddProduct={handleAddProduct}
+              ></Product>)
+            }
+          </div>
+        </div>
       </div>
       <div className="cart-container">
         <Order cart={cart}>
